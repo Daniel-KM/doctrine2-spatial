@@ -11,15 +11,14 @@
     ],
     "license": "MIT",
     "require": {
-        "doctrine/orm": ">=2.3",
-        "creof/geo-parser": "~2.0",
-        "creof/wkt-parser": "~2.0",
-        "creof/wkb-parser": "~2.0"
+        "doctrine/orm": "*",
+        "creof/geo-parser": "*",
+        "creof/wkt-parser": "*",
+        "creof/wkb-parser": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "<5.0",
-        "phpunit/phpcov": "*",
-        "satooshi/php-coveralls": "~1.0"
+        "phpunit/phpunit": "*",
+        "phpunit/phpcov": "*"
     },
     "autoload": {
         "psr-0": {
