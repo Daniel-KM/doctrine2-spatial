@@ -40,6 +40,10 @@ class MySql extends AbstractPlatform
      *
      * Using the following option the preferred axis-order can be indicated.
      *
+     * Warning: this option is not supported by all versions of mysql/mariadb,
+     * so it is disabled for now, because there is no check of the version. You
+     * should take care of it when writing requests.
+     *
      * @var string
      */
     const AXIS_ORDER_OPTION = 'axis-order=long-lat';
@@ -71,13 +75,18 @@ class MySql extends AbstractPlatform
      * @param AbstractSpatialType $type
      * @param string              $sqlExpr
      *
+     * @todo Check version of mysql/mariadb because the second argument may not be supported.
+     *
      * @return string
      */
     public function convertToPHPValueSQL(AbstractSpatialType $type, $sqlExpr)
     {
+        /*
         return $type instanceof GeographyType
             ? sprintf('ST_AsBinary(%s, "%s")', $sqlExpr, self::AXIS_ORDER_OPTION)
             : sprintf('ST_AsBinary(%s)', $sqlExpr);
+        */
+        return sprintf('ST_AsBinary(%s)', $sqlExpr);
     }
 
     /**
